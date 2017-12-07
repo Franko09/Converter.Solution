@@ -1,4 +1,4 @@
-﻿using Autodesk.AutoCAD.EditorInput;
+﻿using Converter.ViewModels;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
@@ -14,11 +14,8 @@ namespace Converter.Views
         public MainView()
         {
             InitializeComponent();
-        }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
+            this.DataContext = new MainViewModel();
         }
     }
 }
