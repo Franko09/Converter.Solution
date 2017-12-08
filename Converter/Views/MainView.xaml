@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Converter.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="459">
-    <Grid>
-        
-    </Grid>    
+    <Border Padding="10">
+        <TextBlock Text="Convertisseur"/>
+    </Border>    
 </Window>
