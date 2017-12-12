@@ -16,8 +16,8 @@ namespace Converter
             // Find the appropriate page
             switch ((ApplicationPage)value)
             {
-                case ApplicationPage.Login:
-                    return new LoginPage();
+                case ApplicationPage.Lenght:
+                    return new LenghtView();
                 default:
                     Debugger.Break();
                     return null;
