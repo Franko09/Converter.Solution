@@ -6,8 +6,8 @@
     public enum ApplicationPage
     {
         /// <summary>
-        /// The initial login page
+        /// The initial Lenght page
         /// </summary>
-        Login = 0,
+        Lenght = 0,
     }
 }
