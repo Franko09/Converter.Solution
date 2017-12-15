@@ -58,14 +58,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Lenght.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
-    <Compile Include="ViewModels\EventArgs.cs" />
-    <Compile Include="ViewModels\EventRaiser.cs" />
+    <Compile Include="ViewModels\AreaViewModel.cs" />
+    <Compile Include="ViewModels\Base\EventArgs.cs" />
+    <Compile Include="ViewModels\Base\EventRaiser.cs" />
     <Compile Include="ViewModels\LenghtViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\ObservableObject.cs" />
-    <Compile Include="ViewModels\RelayCommand.cs" />
-    <Compile Include="ViewModels\SelectionChangedBehaviour.cs" />
+    <Compile Include="ViewModels\Base\ObservableObject.cs" />
+    <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\Base\SelectionChangedBehaviour.cs" />
+    <Compile Include="Views\AreaView.xaml.cs">
+      <DependentUpon>AreaView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LenghtView.xaml.cs">
       <DependentUpon>LenghtView.xaml</DependentUpon>
     </Compile>
@@ -99,11 +105,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\NewFolder1\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Page Include="Views\AreaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\LenghtView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
