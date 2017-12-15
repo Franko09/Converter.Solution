@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using Converter.ViewModels;
+using System.Windows.Controls;
 
 
 namespace Converter.Views
@@ -11,6 +12,8 @@ namespace Converter.Views
         public LenghtView()
         {
             InitializeComponent();
+
+            this.DataContext = new LenghtViewModel();
         }
     }
 }

@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Converter.Views"
       mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
       Title="LenghtView"
       
       >
@@ -16,28 +17,33 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!--#region  From -->
-        <Grid Margin="10 5" Grid.Row="0" Width="200">
+        <Grid Margin="10 5" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="From : " Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="2" Margin="5" VerticalAlignment="Center"/>
+            <TextBlock Text="Convert : " Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding ConvertFrom, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+            <ComboBox ItemsSource="{Binding UnitTypes}"
+                      SelectedValuePath="Type"
+                      Grid.Column="2" Margin="5"
+                      VerticalAlignment="Center"/>
         </Grid>
         <!--#endregion-->
 
         <!--#region To -->
-        <Grid Margin="10 5" Grid.Row="1" Width="200">
+        <Grid Margin="10 5" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="To : " Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="2" Margin="5" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding ConvertTo, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
+            <ComboBox ItemsSource="{Binding UnitTypes}"
+                      Grid.Column="2" Margin="5"
+                      VerticalAlignment="Center"/>
         </Grid>
         <!--#endregion-->
 
