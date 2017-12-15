@@ -6,13 +6,18 @@
              xmlns:local="clr-namespace:Converter"
              mc:Ignorable="d" 
              Title="Convertisseur d'unité"
-             Height="{Binding Height}" Width="{Binding Width}"
-             d:DesignHeight="250" d:DesignWidth="300">
+             Height="{Binding WindowHeight, FallbackValue=250}" 
+             Width="{Binding WindowWidth, FallbackValue=450}"
+             ResizeMode="NoResize"
+             
+             >
+    <!--<Height="{Binding WindowHeight}" Width="{Binding WindowWidth}"-->
     <Border Padding="10">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -20,15 +25,30 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Choisir Catégorie"/>
-                <ComboBox Grid.Column="2" />
+                <ComboBox Grid.Column="2"
+                          local:SelectionChangedBehaviour.Command="{Binding SelectViewCommand}"
+                          ItemsSource="{Binding Categories, UpdateSourceTrigger=PropertyChanged}"
+                          DisplayMemberPath="Name"
+                          SelectedItem="{Binding Category, UpdateSourceTrigger=PropertyChanged}"
+                          />
             </Grid>
 
             <Border Margin="0 10" Grid.Row="1" CornerRadius="10">
-                <Frame x:Name="MainFrame" 
-                                  Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"/>
+                <Frame x:Name="MainFrame"
+                       NavigationUIVisibility="Hidden"
+                       Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"
+                       Padding="15 15"
+                       />
             </Border>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0">Copier</Button>
+                <Button Command="{Binding QuiteCommand}" Grid.Column="1">Quitter</Button>
+            </Grid>
         </Grid>
     </Border>
 </Window>
