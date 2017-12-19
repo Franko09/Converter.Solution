@@ -25,8 +25,9 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="Convert : " Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
             <TextBox Text="{Binding ConvertFrom, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-            <ComboBox ItemsSource="{Binding UnitTypes}"
-                      SelectedValuePath="Type"
+            <ComboBox ItemsSource="{Binding UnitTypes, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="Type"
+                      SelectedItem="{Binding From, UpdateSourceTrigger=PropertyChanged}"
                       Grid.Column="2" Margin="5"
                       VerticalAlignment="Center"/>
         </Grid>
@@ -41,7 +42,9 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="To : " Grid.Column="0" Margin="5" VerticalAlignment="Center"/>
             <TextBox Text="{Binding ConvertTo, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False" Grid.Column="1" Margin="5" VerticalAlignment="Center"/>
-            <ComboBox ItemsSource="{Binding UnitTypes}"
+            <ComboBox ItemsSource="{Binding UnitTypes, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="Type"
+                      SelectedItem="{Binding To, UpdateSourceTrigger=PropertyChanged}"
                       Grid.Column="2" Margin="5"
                       VerticalAlignment="Center"/>
         </Grid>

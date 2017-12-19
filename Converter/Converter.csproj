@@ -59,7 +59,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Lenght.cs" />
+    <Compile Include="Models\Conversion.cs" />
+    <Compile Include="Models\Unit.cs" />
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
     <Compile Include="ViewModels\AreaViewModel.cs" />
     <Compile Include="ViewModels\Base\EventArgs.cs" />
